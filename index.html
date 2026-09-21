@@ -5,426 +5,96 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pitchoune Aim Lab</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
-
 <style>
-:root{
---cyan:#7cecff;
---cyan2:#42d9ff;
---bg:#05080c;
---card:#0d1218;
---text:#ffffff;
-}
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
 body{
-font-family:'Orbitron',sans-serif;
-background:var(--bg);
-color:var(--text);
-overflow-x:hidden;
-}
-
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle at center,rgba(124,236,255,.08),transparent 40%);
-animation:rotateBg 30s linear infinite;
-z-index:-2;
-}
-
-@keyframes rotateBg{
-from{transform:rotate(0deg);}
-to{transform:rotate(360deg);}
-}
-
-nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-background:rgba(0,0,0,.75);
-backdrop-filter:blur(10px);
-z-index:1000;
-border-bottom:1px solid rgba(124,236,255,.2);
-}
-
-.logo{
-font-size:1.5rem;
-font-weight:800;
-color:var(--cyan);
-text-shadow:0 0 15px var(--cyan);
-}
-
-nav ul{
-display:flex;
-gap:30px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
+margin:0;
+font-family:Arial,sans-serif;
+background:#050505;
 color:white;
-transition:.3s;
-}
-
-nav a:hover{
-color:var(--cyan);
+text-align:center;
 }
 
 .hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
+padding:100px 20px;
 }
 
-.hero-logo{
-font-size:5rem;
-font-weight:800;
-color:var(--cyan);
-text-shadow:
-0 0 10px var(--cyan),
-0 0 25px var(--cyan);
-animation:pulse 3s infinite;
+h1{
+font-size:60px;
+color:#7cecff;
 }
 
-@keyframes pulse{
-50%{
-text-shadow:
-0 0 20px var(--cyan),
-0 0 50px var(--cyan);
-}
-}
-
-.hero h2{
-margin-top:20px;
-font-size:1.4rem;
-max-width:800px;
-}
-
-.hero-buttons{
-margin-top:35px;
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-justify-content:center;
+h2{
+font-weight:normal;
 }
 
 .btn{
-padding:15px 30px;
-border:none;
-cursor:pointer;
-font-family:inherit;
-font-weight:bold;
-border-radius:12px;
+display:inline-block;
+padding:15px 25px;
+margin:10px;
+background:#7cecff;
+color:black;
 text-decoration:none;
-transition:.3s;
-}
-
-.primary{
-background:var(--cyan);
-color:black;
-}
-
-.primary:hover{
-transform:translateY(-4px);
-box-shadow:0 0 25px var(--cyan);
-}
-
-.secondary{
-border:2px solid var(--cyan);
-color:var(--cyan);
-}
-
-.secondary:hover{
-background:var(--cyan);
-color:black;
+border-radius:10px;
+font-weight:bold;
 }
 
 section{
-padding:100px 10%;
-}
-
-.section-title{
-text-align:center;
-font-size:2.2rem;
-margin-bottom:50px;
-color:var(--cyan);
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+padding:50px 20px;
 }
 
 .card{
-background:var(--card);
-padding:25px;
-border-radius:18px;
-border:1px solid rgba(124,236,255,.15);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 0 20px rgba(124,236,255,.2);
-}
-
-.card h3{
-margin-bottom:15px;
-color:var(--cyan);
-}
-
-.pricing{
-display:flex;
-flex-wrap:wrap;
-gap:25px;
-justify-content:center;
-}
-
-.price-card{
-width:320px;
-background:var(--card);
-padding:35px;
-border-radius:20px;
-text-align:center;
-border:1px solid rgba(124,236,255,.2);
-}
-
-.price{
-font-size:2rem;
-color:var(--cyan);
-margin:20px 0;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:20px;
-}
-
-.stat{
-text-align:center;
-padding:30px;
-background:var(--card);
-border-radius:18px;
-}
-
-.stat h3{
-font-size:2rem;
-color:var(--cyan);
-}
-
-.contact{
-text-align:center;
-}
-
-.contact a{
-display:inline-block;
-margin:10px;
-padding:15px 25px;
-text-decoration:none;
-color:black;
-background:var(--cyan);
-border-radius:12px;
-font-weight:bold;
-transition:.3s;
-}
-
-.contact a:hover{
-transform:scale(1.05);
-}
-
-footer{
-padding:40px;
-text-align:center;
-border-top:1px solid rgba(124,236,255,.15);
-}
-
-.cypher-line{
-height:2px;
-background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-margin:50px 0;
-}
-
-.reveal{
-opacity:0;
-transform:translateY(40px);
-transition:1s;
-}
-
-.reveal.active{
-opacity:1;
-transform:translateY(0);
+background:#111;
+padding:20px;
+margin:10px auto;
+max-width:600px;
+border-radius:10px;
 }
 </style>
 </head>
+
 <body>
 
-<nav>
-<div class="logo">PITCHOUNE AIM LAB</div>
-<ul>
-<li><a href="#services">Services</a></li>
-<li><a href="#tarifs">Tarifs</a></li>
-<li><a href="#resultats">Résultats</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
+<div class="hero">
+<h1>PITCHOUNE AIM LAB</h1>
+<h2>Le coaching qui fait la différence sur Valorant.</h2>
 
-<section class="hero">
-
-<div class="hero-logo">◉</div>
-
-<h1 style="font-size:4rem;margin-top:20px;">
-PITCHOUNE AIM LAB
-</h1>
-
-<h2>
-Le coaching qui fait la différence sur Valorant.
-</h2>
-
-<div class="hero-buttons">
-<a class="btn primary" href="https://discord.gg/YUgCZWR9P" target="_blank">
-REJOINDRE LE DISCORD
-</a>
-
-<a class="btn secondary" href="#tarifs">
-VOIR LES TARIFS
-</a>
+<a class="btn" href="https://discord.gg/3xytxQ5jB">Discord</a>
+<a class="btn" href="mailto:pitchouneaimlab@gmail.com">Email</a>
 </div>
 
+<section>
+<h2>📊 Statistiques</h2>
+
+<div class="card">1000+ Joueurs coachés</div>
+<div class="card">5000+ Heures de coaching</div>
+<div class="card">95% Satisfaction</div>
+<div class="card">6 Heures offertes</div>
 </section>
 
-<div class="cypher-line"></div>
+<section>
+<h2>💰 Tarifs</h2>
 
-<section id="services" class="reveal">
-<h2 class="section-title">SERVICES</h2>
+<div class="card">🎁 6 premières heures gratuites</div>
+<div class="card">⭐ Pack 5 séances : 19,99 €</div>
+<div class="card">👑 Pack 10 séances : 39,99 €</div>
+</section>
 
-<div class="grid">
+<section>
+<h2>📞 Contact</h2>
 
 <div class="card">
-<h3>🎯 AIM TRAINING</h3>
-<p>Amélioration du crosshair placement, flicks et tracking.</p>
+Discord : https://discord.gg/3xytxQ5jB
 </div>
 
 <div class="card">
-<h3>📹 VOD REVIEW</h3>
-<p>Analyse détaillée de tes parties pour corriger tes erreurs.</p>
+TikTok : @gbr.iel15
 </div>
 
 <div class="card">
-<h3>🧠 GAME SENSE</h3>
-<p>Positionnement, rotations et prise d'information.</p>
-</div>
-
-<div class="card">
-<h3>🏆 COACHING RANKED</h3>
-<p>Progression adaptée à ton niveau actuel.</p>
-</div>
-
-</div>
-</section>
-
-<section id="tarifs" class="reveal">
-<h2 class="section-title">TARIFS</h2>
-
-<div class="pricing">
-
-<div class="price-card">
-<h3>OFFRE DÉCOUVERTE</h3>
-<div class="price">GRATUIT</div>
-<p>Les 6 premières heures offertes.</p>
-</div>
-
-<div class="price-card">
-<h3>COACHING STANDARD</h3>
-<div class="price">5€ / heure</div>
-<p>Coaching personnalisé Valorant.</p>
-</div>
-
-</div>
-</section>
-
-<section id="resultats" class="reveal">
-
-<h2 class="section-title">RÉSULTATS</h2>
-
-<div class="stats">
-
-<div class="stat">
-<h3>+100%</h3>
-<p>Confiance en partie</p>
-</div>
-
-<div class="stat">
-<h3>+Aim</h3>
-<p>Meilleure précision</p>
-</div>
-
-<div class="stat">
-<h3>+Game Sense</h3>
-<p>Décisions plus intelligentes</p>
-</div>
-
-<div class="stat">
-<h3>+Rank</h3>
-<p>Progression plus rapide</p>
-</div>
-
+Email : pitchouneaimlab@gmail.com
 </div>
 
 </section>
-
-<section id="contact" class="reveal">
-
-<h2 class="section-title">CONTACT</h2>
-
-<div class="contact">
-
-<a href="https://discord.gg/YUgCZWR9P" target="_blank">
-DISCORD
-</a>
-
-<a href="https://www.tiktok.com/@gbr.iel15?_r=1&_t=ZN-99tQGJo7Tjq" target="_blank">
-TIKTOK
-</a>
-
-</div>
-
-</section>
-
-<footer>
-PitchouneAimLab.fr © 2026
-</footer>
-
-<script>
-const reveals=document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll",()=>{
-reveals.forEach(el=>{
-const top=el.getBoundingClientRect().top;
-if(top<window.innerHeight-100){
-el.classList.add("active");
-}
-});
-});
-</script>
 
 </body>
 </html>
