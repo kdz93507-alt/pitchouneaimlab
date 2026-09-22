@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,96 +6,468 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Pitchoune Aim Lab</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
-body{
+*{
 margin:0;
-font-family:Arial,sans-serif;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+font-family:'Orbitron',sans-serif;
+}
+
+body{
 background:#050505;
 color:white;
-text-align:center;
+overflow-x:hidden;
 }
 
-.hero{
-padding:100px 20px;
+.video-bg{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:-2;
 }
 
-h1{
-font-size:60px;
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.75);
+z-index:-1;
+}
+
+header{
+position:fixed;
+top:0;
+width:100%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,.6);
+backdrop-filter:blur(10px);
+z-index:999;
+border-bottom:1px solid rgba(124,236,255,.2);
+}
+
+.logo-nav{
+display:flex;
+align-items:center;
+gap:15px;
+}
+
+.logo-nav img{
+width:55px;
+height:55px;
+border-radius:50%;
+box-shadow:0 0 20px #7cecff;
+}
+
+.logo-nav h2{
 color:#7cecff;
 }
 
-h2{
-font-weight:normal;
+nav a{
+color:white;
+text-decoration:none;
+margin-left:25px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#7cecff;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:300px;
+max-width:80%;
+filter:drop-shadow(0 0 30px #7cecff);
+animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+0%,100%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+}
+
+.hero h1{
+font-size:4rem;
+margin-top:20px;
+}
+
+.hero p{
+font-size:1.2rem;
+color:#b8f5ff;
+margin-top:15px;
+}
+
+.buttons{
+margin-top:30px;
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .btn{
-display:inline-block;
-padding:15px 25px;
-margin:10px;
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+font-weight:700;
+transition:.3s;
+}
+
+.btn-primary{
 background:#7cecff;
 color:black;
-text-decoration:none;
-border-radius:10px;
-font-weight:bold;
+}
+
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 25px #7cecff;
+}
+
+.btn-secondary{
+border:2px solid #7cecff;
+color:#7cecff;
+}
+
+.btn-secondary:hover{
+background:#7cecff;
+color:black;
 }
 
 section{
-padding:50px 20px;
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+font-size:2.5rem;
+margin-bottom:50px;
+color:#7cecff;
+text-shadow:0 0 20px #7cecff;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
 .card{
-background:#111;
-padding:20px;
-margin:10px auto;
-max-width:600px;
-border-radius:10px;
+background:rgba(15,15,15,.9);
+border:1px solid rgba(124,236,255,.2);
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 30px rgba(124,236,255,.3);
+}
+
+.card h3{
+font-size:2rem;
+color:#7cecff;
+margin-bottom:10px;
 }
 </style>
 </head>
-
 <body>
 
-<div class="hero">
-<h1>PITCHOUNE AIM LAB</h1>
-<h2>Le coaching qui fait la différence sur Valorant.</h2>
+<video autoplay muted loop playsinline class="video-bg">
+<source src="https://cdn.artstation.com/p/video_sources/002/333/567/comp-1.mp4" type="video/mp4">
+</video>
 
-<a class="btn" href="https://discord.gg/3xytxQ5jB">Discord</a>
-<a class="btn" href="mailto:pitchouneaimlab@gmail.com">Email</a>
+<div class="overlay"></div>
+
+<header>
+<div class="logo-nav">
+<img src="logo.png">
+<h2>Pitchoune Aim Lab</h2>
 </div>
 
-<section>
-<h2>📊 Statistiques</h2>
+<nav>
+<a href="#accueil">Accueil</a>
+<a href="#coaching">Coaching</a>
+<a href="#shop">Boutique</a>
+<a href="#reservation">Réservation</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-<div class="card">1000+ Joueurs coachés</div>
-<div class="card">5000+ Heures de coaching</div>
-<div class="card">95% Satisfaction</div>
-<div class="card">6 Heures offertes</div>
-</section>
+<section class="hero" id="accueil">
 
-<section>
-<h2>💰 Tarifs</h2>
+<img src="logo.png">
 
-<div class="card">🎁 6 premières heures gratuites</div>
-<div class="card">⭐ Pack 5 séances : 19,99 €</div>
-<div class="card">👑 Pack 10 séances : 39,99 €</div>
-</section>
+<h1>Pitchoune Aim Lab</h1>
 
-<section>
-<h2>📞 Contact</h2>
+<p>Le coaching qui fait la différence sur Valorant.</p>
 
-<div class="card">
-Discord : https://discord.gg/3xytxQ5jB
-</div>
-
-<div class="card">
-TikTok : @gbr.iel15
-</div>
-
-<div class="card">
-Email : pitchouneaimlab@gmail.com
+<div class="buttons">
+<a class="btn btn-primary" href="https://discord.gg/3xytxQ5jB">Discord</a>
+<a class="btn btn-secondary" href="#reservation">Réserver</a>
 </div>
 
 </section>
+
+<section id="coaching">
+
+<h2 class="section-title">Statistiques</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>1000+</h3>
+<p>Joueurs coachés</p>
+</div>
+
+<div class="card">
+<h3>5000+</h3>
+<p>Heures de coaching</p>
+</div>
+
+<div class="card">
+<h3>95%</h3>
+<p>Satisfaction</p>
+</div>
+
+<div class="card">
+<h3>6H</h3>
+<p>Offertes</p>
+</div>
+
+</div>
+
+</section>
+<section>
+
+<h2 class="section-title">Coaching Valorant</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>🎯 Aim Training</h3>
+<p>Travail du crosshair placement, tracking, flicks et régularité.</p>
+</div>
+
+<div class="card">
+<h3>📹 Analyse VOD</h3>
+<p>Analyse complète de tes parties pour corriger tes erreurs.</p>
+</div>
+
+<div class="card">
+<h3>🧠 Game Sense</h3>
+<p>Prise d'informations, rotations et lecture du jeu.</p>
+</div>
+
+<div class="card">
+<h3>🏆 Ranked</h3>
+<p>Accompagnement personnalisé pour monter de rang.</p>
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2 class="section-title">Tarifs</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>🎁 Gratuit</h3>
+<p>6 premières heures offertes</p>
+</div>
+
+<div class="card">
+<h3>⭐ Pack 5 séances</h3>
+<p>19,99 €</p>
+</div>
+
+<div class="card">
+<h3>👑 Pack 10 séances</h3>
+<p>39,99 €</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="shop">
+
+<h2 class="section-title">Boutique Officielle</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>🧢 Casquette Premium</h3>
+<p>Pitchoune Aim Lab</p>
+<p style="margin-top:10px;color:#7cecff;font-size:24px;">
+4,99 €
+</p>
+<a class="btn btn-primary" href="https://discord.gg/3xytxQ5jB">
+Commander
+</a>
+</div>
+
+<div class="card">
+<h3>👕 T-Shirt Premium</h3>
+<p>Pitchoune Aim Lab</p>
+<p style="margin-top:10px;color:#7cecff;font-size:24px;">
+9,99 €
+</p>
+<a class="btn btn-primary" href="https://discord.gg/3xytxQ5jB">
+Commander
+</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="reservation">
+
+<h2 class="section-title">Réserver un Coaching</h2>
+
+<form style="max-width:700px;margin:auto;display:flex;flex-direction:column;gap:15px;">
+
+<input type="text" placeholder="Pseudo Valorant" required style="padding:15px;border-radius:12px;border:none;">
+
+<input type="text" placeholder="Rang actuel" required style="padding:15px;border-radius:12px;border:none;">
+
+<input type="text" placeholder="Discord" required style="padding:15px;border-radius:12px;border:none;">
+
+<select style="padding:15px;border-radius:12px;border:none;">
+<option>Pack 5 séances</option>
+<option>Pack 10 séances</option>
+</select>
+
+<textarea placeholder="Objectif et informations" rows="6" style="padding:15px;border-radius:12px;border:none;"></textarea>
+
+<button class="btn btn-primary" type="submit">
+Envoyer la demande
+</button>
+
+</form>
+
+</section>
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<div class="stats">
+
+<div class="card">
+<h3>💬 Discord</h3>
+<p>Rejoins la communauté Pitchoune Aim Lab.</p>
+
+<br>
+
+<a class="btn btn-primary"
+href="https://discord.gg/3xytxQ5jB"
+target="_blank">
+Rejoindre
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📱 TikTok</h3>
+
+<p>@gbr.iel15</p>
+
+<br>
+
+<a class="btn btn-primary"
+href="https://www.tiktok.com/@gbr.iel15?_r=1&_t=ZN-99tQGJo7Tjq"
+target="_blank">
+Voir TikTok
+</a>
+
+</div>
+
+<div class="card">
+
+<h3>📧 Email</h3>
+
+<p>pitchouneaimlab@gmail.com</p>
+
+<br>
+
+<a class="btn btn-primary"
+href="mailto:pitchouneaimlab@gmail.com">
+Envoyer un email
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer style="
+text-align:center;
+padding:40px 20px;
+border-top:1px solid rgba(124,236,255,.2);
+background:rgba(0,0,0,.6);
+">
+
+<h3 style="color:#7cecff;">
+Pitchoune Aim Lab
+</h3>
+
+<p style="margin-top:10px;">
+Le coaching qui fait la différence sur Valorant.
+</p>
+
+<p style="margin-top:15px;color:#aaa;">
+© 2026 PitchouneAimLab.fr - Tous droits réservés
+</p>
+
+</footer>
+
+<script>
+
+const observer = new IntersectionObserver(entries => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.style.opacity = "1";
+entry.target.style.transform = "translateY(0)";
+}
+});
+});
+
+document.querySelectorAll('.card').forEach(card => {
+card.style.opacity = "0";
+card.style.transform = "translateY(40px)";
+card.style.transition = "all .8s ease";
+observer.observe(card);
+});
+
+</script>
 
 </body>
 </html>
