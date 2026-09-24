@@ -351,20 +351,20 @@ Commander
 
 <h2 class="section-title">Réserver un Coaching</h2>
 
-<form style="max-width:700px;margin:auto;display:flex;flex-direction:column;gap:15px;">
+<form action="https://formspree.io/f/mjykooek" method="POST" style="max-width:700px;margin:auto;display:flex;flex-direction:column;gap:15px;">
 
-<input type="text" placeholder="Pseudo Valorant" required style="padding:15px;border-radius:12px;border:none;">
+<input name="pseudo" type="text" placeholder="Pseudo Valorant" required style="padding:15px;border-radius:12px;border:none;">
 
-<input type="text" placeholder="Rang actuel" required style="padding:15px;border-radius:12px;border:none;">
+<input name="rang" type="text" placeholder="Rang actuel" required style="padding:15px;border-radius:12px;border:none;">
 
-<input type="text" placeholder="Discord" required style="padding:15px;border-radius:12px;border:none;">
+<input name="discord" type="text" placeholder="Discord" required style="padding:15px;border-radius:12px;border:none;">
 
-<select style="padding:15px;border-radius:12px;border:none;">
+<select name="pack" style="padding:15px;border-radius:12px;border:none;">
 <option>Pack 5 séances</option>
 <option>Pack 10 séances</option>
 </select>
 
-<textarea placeholder="Objectif et informations" rows="6" style="padding:15px;border-radius:12px;border:none;"></textarea>
+<textarea name="objectif" placeholder="Objectif et informations" rows="6" style="padding:15px;border-radius:12px;border:none;"></textarea>
 
 <button class="btn btn-primary" type="submit">
 Envoyer la demande
